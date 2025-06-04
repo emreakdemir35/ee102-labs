@@ -1,0 +1,53 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 03/02/2025 11:58:17 PM
+-- Design Name: 
+-- Module Name: shift - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity rotate is
+    Port ( a_i : in STD_LOGIC_VECTOR(3 downto 0);
+           output : out STD_LOGIC_VECTOR (4 downto 0));
+end rotate;
+
+architecture Behavioral of rotate is
+    signal rotate: std_logic_vector(3 downto 0);
+begin
+    rotate(1) <= a_i(0);
+    rotate(2) <= a_i(1);
+    rotate(3) <= a_i(2);
+    rotate(0) <= a_i(3);
+    
+    output(0) <= rotate(0);
+    output(1) <= rotate(1);
+    output(2) <= rotate(2);
+    output(3) <= rotate(3);
+    output(4) <= '0';
+    
+end Behavioral;
